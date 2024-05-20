@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Promo Campaign</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Edit Promo Campaign</h1>
+    <form action="/airline/edit-promo/<%= promo.id %>" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= promo.name %>" required><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<%= promo.description %>" required><br>
+
+        <label for="target_audience">Target Audience:</label>
+        <input type="text" id="target_audience" name="target_audience" value="<%= promo.target_audience %>" required><br>
+
+        <label for="departure_city">Departure City:</label>
+        <input type="text" id="departure_city" name="departure_city" value="<%= promo.departure_city %>" required><br>
+
+        <label for="arrival_city">Arrival City:</label>
+        <input type="text" id="arrival_city" name="arrival_city" value="<%= promo.arrival_city %>" required><br>
+
+        <label for="travel_period">Travel Period:</label>
+        <input type="text" id="travel_period" name="travel_period" value="<%= promo.travel_period %>" required><br>
+
+        <label for="commission_agency">Commission for Agency:</label>
+        <input type="number" id="commission_agency" name="commission_agency" value="<%= promo.commission_agency %>" required><br>
+
+        <label for="commission_agent">Commission for Agent:</label>
+        <input type="number" id="commission_agent" name="commission_agent" value="<%= promo.commission_agent %>" required><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <form action="/airline/delete-promo/<%= promo.id %>" method="post">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

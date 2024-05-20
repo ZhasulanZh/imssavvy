@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>User Management</h1>
+    <nav>
+        <a href="/admin/profile">Profile</a>
+        <form action="/logout" method="post" style="display:inline;">
+            <button type="submit">Log Out</button>
+        </form>
+    </nav>
+    <h2>Manage Users</h2>
+    <ul>
+        <% allUsers.forEach(function(user) { %>
+            <li>
+                <strong><%= user.username %> (<%= user.role %>)</strong><br>
+                Name: <%= user.name %><br>
+                Email: <%= user.email %><br>
+                Status: <%= user.status %><br>
+                <form action="/admin/verify-user" method="post">
+                    <input type="hidden" name="userId" value="<%= user.id %>">
+                    <button type="submit">Verify User</button>
+                </form>
+                <form action="/admin/delete-user" method="post">
+                    <input type="hidden" name="userId" value="<%= user.id %>">
+                    <button type="submit">Delete User</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

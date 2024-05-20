@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+    </head>
+    <body>
+        <h1>Profile</h1>
+        <form action="/airline/profile" method="post">
+            <label for="company-name">Company Name:</label>
+            <input
+                type="text"
+                id="company-name"
+                name="company-name"
+                value="Airline Name"
+                required
+            />
+
+            <label for="manager-name">Manager Name:</label>
+            <input
+                type="text"
+                id="manager-name"
+                name="manager-name"
+                value="Manager Name"
+                required
+            />
+
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                value="manager@airline.com"
+                readonly
+            />
+
+            <label for="logo">Company Logo:</label>
+            <input type="file" id="logo" name="logo" />
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </body>
+</html>

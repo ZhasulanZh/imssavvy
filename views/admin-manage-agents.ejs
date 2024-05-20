@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Agents and Agencies</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Manage Agents and Agencies</h1>
+    <form action="/admin/link-agent" method="post">
+        <label for="agentId">Agent:</label>
+        <select id="agentId" name="agentId" required>
+            <% agents.forEach(function(agent) { %>
+                <option value="<%= agent.id %>"><%= agent.name %> (<%= agent.email %>)</option>
+            <% }) %>
+        </select><br>
+
+        <label for="agencyId">Agency:</label>
+        <select id="agencyId" name="agencyId" required>
+            <% agencies.forEach(function(agency) { %>
+                <option value="<%= agency.id %>"><%= agency.name %> (<%= agency.email %>)</option>
+            <% }) %>
+        </select><br>
+
+        <button type="submit">Link Agent to Agency</button>
+    </form>
+    <a href="/admin/dashboard">Back to Dashboard</a>
+</body>
+</html>

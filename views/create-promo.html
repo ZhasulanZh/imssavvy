@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Promo Campaign</title>
+    </head>
+    <body>
+        <h1>Create Promo Campaign</h1>
+        <form action="/airline/create-promo" method="post">
+            <label for="name">Campaign Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="target">Target Audience:</label>
+            <input type="text" id="target" name="target" required />
+
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" required />
+
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" required />
+
+            <label for="period">Travel Period:</label>
+            <input type="text" id="period" name="period" required />
+
+            <label for="payment">Payment:</label>
+            <input type="text" id="payment" name="payment" required />
+
+            <button type="submit">Create</button>
+        </form>
+    </body>
+</html>

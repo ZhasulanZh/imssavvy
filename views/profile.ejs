@@ -1,0 +1,42 @@
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Profile</title>
+                <link rel="stylesheet" href="/css/styles.css">
+            </head>
+            <body>
+                <h1>Profile</h1>
+                <% if (message) { %>
+                    <p><%= message %></p>
+                <% } %>
+                <form action="/profile" method="post">
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" id="company_name" name="company_name" value="<%= user.company_name %>" required><br>
+
+                    <label for="name">Manager Name:</label>
+                    <input type="text" id="name" name="name" value="<%= user.name %>" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<%= user.email %>" readonly><br>
+
+                    <label for="logo">Logo URL:</label>
+                    <input type="text" id="logo" name="logo" value="<%= user.logo %>"><br>
+
+                    <% if (user.role === 'agent') { %>
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" value="<%= user.country %>" required><br>
+
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" value="<%= user.city %>" required><br>
+
+                        <label for="agencyId">Agency:</label>
+                        <input type="text" id="agencyId" name="agencyId" value="<%= user.agencyId %>" readonly><br>
+                    <% } %>
+
+                    <button type="submit">Update Profile</button>
+                </form>
+                <a href="/<%= user.role %>/dashboard"><button>Назад</button></a>
+            </body>
+            </html>

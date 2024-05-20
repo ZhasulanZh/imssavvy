@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/auth/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="submit">Login</button>
+    </form>
+    <h2>Register</h2>
+    <ul>
+        <li><a href="/register-agent">Register as Agent</a></li>
+        <li><a href="/register-agency">Register as Agency</a></li>
+        <li><a href="/register-airline">Register as Airline</a></li>
+    </ul>
+    <h2>All Users</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Role</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.role %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.password %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

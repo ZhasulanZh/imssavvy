@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Agents</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Confirm Agents</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% agents.forEach(function(agent) { %>
+                <tr>
+                    <td><%= agent.name %></td>
+                    <td><%= agent.email %></td>
+                    <td><%= agent.country %></td>
+                    <td><%= agent.city %></td>
+                    <td>
+                        <form action="/agency/confirm-agent" method="post" style="display:inline;">
+                            <input type="hidden" name="agentId" value="<%= agent.id %>">
+                            <button type="submit">Confirm</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/agency/dashboard">Back to Dashboard</a>
+</body>
+</html>
